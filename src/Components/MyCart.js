@@ -123,7 +123,7 @@ function Display({ prods, setProds, total, setTotal }) {
       image: "https://example.com/your_logo",
       test: "test1",
       order_id: data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      callback_url: "https://renteasy121.herokuapp.com/verify?token=" + localStorage.getItem('token'),
+      callback_url: "/verify?token=" + localStorage.getItem('token'),
       "prefill": {
         "name": "Gaurav Kumar",
         "email": "gaurav.kumar@example.com",
