@@ -152,15 +152,28 @@ function Display({ prod }) {
     catch (e) {
       setLoading(false);
       console.log("123", e);
-      toast.error(e.response.data.message, {
-        position: "top-center",
-        autoClose: 4000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-      });
+      try {
+        toast.error(e.response.data.message, {
+            position: "top-center",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+        });
+    }
+    catch (e) {
+        toast.error("Facing cors error...try again", {
+            position: "top-center",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+        });
+    }
     }
   }
   const obj = {
